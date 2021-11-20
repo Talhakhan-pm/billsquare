@@ -6,8 +6,6 @@ ruby "3.0.0"
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.0.alpha2"
 
-# Use sqlite3 as the database for Active Record
-gem "sqlite3", "~> 1.4"
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
@@ -26,6 +24,9 @@ gem "tailwindcss-rails", ">= 0.4.3"
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder", "~> 2.7"
+
+# Add stripe gem
+gem "stripe"
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
@@ -48,6 +49,13 @@ gem "bootsnap", ">= 1.4.4", require: false
 group :development, :test do
   # Start debugger with binding.b [https://github.com/ruby/debug]
   gem "debug", ">= 1.0.0", platforms: %i[ mri mingw x64_mingw ]
+  # Use sqlite3 as the database for Active Record
+  gem "sqlite3", "~> 1.4"
+
+end
+
+group :production do
+  gem 'pg'
 end
 
 group :development do
